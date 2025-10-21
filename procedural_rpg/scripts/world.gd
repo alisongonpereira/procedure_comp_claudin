@@ -3,8 +3,6 @@ extends Node2D
 # World - Gerencia o mundo procedural
 
 const TILE_SIZE = 32
-const NPC_SCENE = preload("res://scenes/entities/npc.tscn")
-const ENEMY_SCENE = preload("res://scenes/entities/enemy.tscn")
 
 @onready var tilemap = $TileMap
 @onready var npcs_container = $NPCs
