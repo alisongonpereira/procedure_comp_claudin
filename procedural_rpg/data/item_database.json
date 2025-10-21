@@ -1,0 +1,109 @@
+{
+  "healing_items": [
+    {
+      "id": "health_potion",
+      "name": "Health Potion",
+      "type": "healing",
+      "value": 30,
+      "rarity": "common",
+      "price": 20,
+      "description": "Restores 30 HP"
+    },
+    {
+      "id": "greater_potion",
+      "name": "Greater Health Potion",
+      "type": "healing",
+      "value": 50,
+      "rarity": "uncommon",
+      "price": 40,
+      "description": "Restores 50 HP"
+    },
+    {
+      "id": "elixir",
+      "name": "Elixir of Life",
+      "type": "healing",
+      "value": 100,
+      "rarity": "rare",
+      "price": 100,
+      "description": "Fully restores HP"
+    }
+  ],
+  "weapons": [
+    {
+      "id": "rusty_sword",
+      "name": "Rusty Sword",
+      "type": "weapon",
+      "attack_bonus": 2,
+      "rarity": "common",
+      "price": 30,
+      "description": "A worn but functional blade"
+    },
+    {
+      "id": "steel_sword",
+      "name": "Steel Sword",
+      "type": "weapon",
+      "attack_bonus": 5,
+      "rarity": "uncommon",
+      "price": 80,
+      "description": "A well-crafted weapon"
+    },
+    {
+      "id": "echo_blade",
+      "name": "Echo Blade",
+      "type": "weapon",
+      "attack_bonus": 10,
+      "rarity": "rare",
+      "price": 200,
+      "description": "A blade that remembers past battles. Grows stronger with each run."
+    }
+  ],
+  "armor": [
+    {
+      "id": "leather_armor",
+      "name": "Leather Armor",
+      "type": "armor",
+      "defense_bonus": 3,
+      "rarity": "common",
+      "price": 40,
+      "description": "Basic protection"
+    },
+    {
+      "id": "chainmail",
+      "name": "Chainmail",
+      "type": "armor",
+      "defense_bonus": 6,
+      "rarity": "uncommon",
+      "price": 100,
+      "description": "Solid metal links"
+    }
+  ],
+  "special_items": [
+    {
+      "id": "memory_fragment",
+      "name": "Memory Fragment",
+      "type": "treasure",
+      "rarity": "rare",
+      "price": 0,
+      "description": "A crystallized memory from another run. Cannot be sold.",
+      "seed_specific": true
+    },
+    {
+      "id": "corrupted_gem",
+      "name": "Corrupted Gem",
+      "type": "treasure",
+      "rarity": "legendary",
+      "price": 500,
+      "description": "Only found in corrupted worlds. Pulses with dark energy.",
+      "corrupted_only": true
+    },
+    {
+      "id": "time_shard",
+      "name": "Time Shard",
+      "type": "accessory",
+      "rarity": "legendary",
+      "price": 0,
+      "description": "Allows you to remember more across runs. Increases EXP gain by 50%.",
+      "permanent": true
+    }
+  ]
+}
