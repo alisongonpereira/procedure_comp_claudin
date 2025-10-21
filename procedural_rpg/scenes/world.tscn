@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://world_001"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://player_001" path="res://scenes/entities/player.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://hud_001" path="res://scenes/ui/hud.tscn" id="3"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = null
+format = 2
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("3")]
+
+[node name="CombatUI" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="CanvasLayer/CombatUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CombatUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemyInfo" type="Label" parent="CanvasLayer/CombatUI/VBoxContainer"]
+layout_mode = 2
+text = "Enemy Name
+HP: 100/100"
+horizontal_alignment = 1
+
+[node name="PlayerInfo" type="Label" parent="CanvasLayer/CombatUI/VBoxContainer"]
+layout_mode = 2
+text = "You
+HP: 100/100"
+horizontal_alignment = 1
+
+[node name="CombatLog" type="RichTextLabel" parent="CanvasLayer/CombatUI/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+bbcode_enabled = true
+scroll_following = true
+
+[node name="Actions" type="HBoxContainer" parent="CanvasLayer/CombatUI/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="AttackButton" type="Button" parent="CanvasLayer/CombatUI/VBoxContainer/Actions"]
+layout_mode = 2
+text = "Attack"
+
+[node name="DefendButton" type="Button" parent="CanvasLayer/CombatUI/VBoxContainer/Actions"]
+layout_mode = 2
+text = "Defend"
+
+[node name="ItemButton" type="Button" parent="CanvasLayer/CombatUI/VBoxContainer/Actions"]
+layout_mode = 2
+text = "Item"
+
+[node name="FleeButton" type="Button" parent="CanvasLayer/CombatUI/VBoxContainer/Actions"]
+layout_mode = 2
+text = "Flee"
